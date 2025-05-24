@@ -133,7 +133,7 @@ export default function Iletisim() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                    className="w-full bg-[#9F7E7E] text-white px-8 py-3 rounded-lg hover:bg-[#8E6D6D] transition-colors"
                   >
                     Gönder
                   </button>
@@ -149,13 +149,14 @@ export default function Iletisim() {
             <h2 className="text-3xl font-bold mb-8 text-center">Konum</h2>
             <div className="aspect-w-16 aspect-h-9">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12578.674325223862!2d26.783885!3d38.191944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb95a5e8f85c21%3A0x2c7ac6f9a7f1c0e9!2zU8SxxJ9hY8SxaywgU2VmZXJpaGlzYXIvxLB6bWly!5e0!3m2!1str!2str!4v1710371234567!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.8876168859087!2d26.78837!3d38.19194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb95a5e8f85c21%3A0x9876543210fedcba!2zQm9paSBSZXN0ICYgQnJlYWtmYXN0IC0gU8SxxJ9hY8SxayBLYWxlacOnaSBCdXRpayBPdGVs!5e0!3m2!1str!2str!4v1710371234567!5m2!1str!2str"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-lg shadow-lg"
               ></iframe>
             </div>
           </div>

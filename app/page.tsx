@@ -1,60 +1,29 @@
 import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import HeroSlider from '../components/HeroSlider';
 
 export default function Home() {
+  const heroImages = [
+    {
+      src: '/images/hero-image.jpg',
+      alt: 'Boii Rest & Breakfast'
+    },
+    {
+      src: '/images/hero-image-2.jpg',
+      alt: 'Boii Kahvaltı'
+    },
+    {
+      src: '/images/hero-image-3.jpg',
+      alt: 'Boii Avlu'
+    }
+  ];
+
   return (
     <>
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="relative h-screen">
-          <Image
-            src="/images/hero-image.jpg"
-            alt="Boii Rest & Breakfast"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl mx-auto px-4">
-              <h1 className="text-6xl font-bold mb-6">BOİİ REST & BREAKFAST</h1>
-              <h2 className="text-3xl mb-8">Konfor ve Huzurun Buluşma Noktası</h2>
-              <p className="text-xl leading-relaxed mb-8">
-                Sığacık'ın tarihi dokusunda, modern konforun sıcaklığıyla harmanlanmış bir konaklama deneyimi... 
-                Boii Rest & Breakfast, tarihi bir konağın büyüsünü çağdaş konforla buluşturarak misafirlerine 
-                eşsiz bir tatil sunuyor.
-              </p>
-              <button className="bg-white text-gray-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
-                REZERVASYON
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto max-w-6xl px-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-4">Kahvaltı</h3>
-                <p className="text-gray-600">Organik & Ev Yapımı</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-4">Avlu</h3>
-                <p className="text-gray-600">Huzurlu & Ferah</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-4">Odalarımız</h3>
-                <p className="text-gray-600">Konfor & Şıklık</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-4">Resepsiyon</h3>
-                <p className="text-gray-600">7/24 Hizmet</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroSlider images={heroImages} />
 
         {/* About Section */}
         <section className="py-20 px-4 bg-gray-50">
@@ -103,6 +72,11 @@ export default function Home() {
                     Klima ve Isıtma
                   </p>
                 </div>
+                <div className="text-center mb-12">
+                  <button className="mt-8 bg-[#9F7E7E] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
+                    REZERVASYON
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -140,6 +114,11 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <div className="text-center mb-12">
+              <button className="mt-8 bg-[#9F7E7E] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
+                REZERVASYON
+              </button>
+            </div>
           </div>
         </section>
 
@@ -151,6 +130,9 @@ export default function Home() {
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.
               </p>
+              <button className="mt-8 bg-[#9F7E7E] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
+                REZERVASYON
+              </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,8 +29,14 @@ export default function Header() {
         {/* Main Navigation */}
         <nav className="py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-600">
-              Boii Rest & Breakfast
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/about-image.jpg"
+                alt="Boii Rest & Breakfast Logo"
+                width={150}
+                height={50}
+                className="object-contain"
+              />
             </Link>
 
             {/* Desktop Menu */}
@@ -41,10 +48,16 @@ export default function Header() {
                 Ana Sayfa
               </Link>
               <Link
-                href="/hakkimizda"
+                href="/hikayemiz"
                 className="text-gray-600 hover:text-blue-600 transition-colors"
               >
-                Hakkımızda
+                Hikayemiz
+              </Link>
+              <Link
+                href="/sigacik"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                Sığacık
               </Link>
               <Link
                 href="/odalarimiz"
@@ -103,11 +116,18 @@ export default function Header() {
                 Ana Sayfa
               </Link>
               <Link
-                href="/hakkimizda"
+                href="/hikayemiz"
                 className="block text-gray-600 hover:text-blue-600 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Hakkımızda
+                Hikayemiz
+              </Link>
+              <Link
+                href="/sigacik"
+                className="block text-gray-600 hover:text-blue-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sığacık
               </Link>
               <Link
                 href="/odalarimiz"

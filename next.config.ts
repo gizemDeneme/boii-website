@@ -1,12 +1,13 @@
-import type { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
-  output: 'export',
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
-  basePath: '/boii-website',
-  trailingSlash: true
-}
+  ...(process.env.NODE_ENV === 'production' ? {
+    output: 'export',
+    basePath: '/boii-website',
+    assetPrefix: '/boii-website/',
+  } : {})
+};
 
-export default nextConfig
+export default nextConfig;

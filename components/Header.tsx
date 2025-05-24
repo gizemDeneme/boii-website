@@ -77,7 +77,7 @@ export default function Header() {
               >
                 İletişim
               </Link>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
+              <button className="bg-[#9F7E7E] text-white px-6 py-2 rounded hover:bg-[#8E6D6D] transition-colors">
                 Rezervasyon
               </button>
             </div>
@@ -150,7 +150,7 @@ export default function Header() {
               >
                 İletişim
               </Link>
-              <button className="w-full bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
+              <button className="w-full bg-[#9F7E7E] text-white px-6 py-2 rounded hover:bg-[#8E6D6D] transition-colors">
                 Rezervasyon
               </button>
             </div>

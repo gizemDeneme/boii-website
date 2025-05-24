@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/boii-website'
+  basePath: '/boii-website',
+  trailingSlash: true
 }
 
 export default nextConfig

@@ -23,8 +23,8 @@ export default function Footer() {
               <Link href="/" className="block text-gray-300 hover:text-white transition-colors">
                 Ana Sayfa
               </Link>
-              <Link href="/hakkimizda" className="block text-gray-300 hover:text-white transition-colors">
-                Hakkımızda
+              <Link href="/hikayemiz" className="block text-gray-300 hover:text-white transition-colors">
+                Hikayemiz
               </Link>
               <Link href="/odalarimiz" className="block text-gray-300 hover:text-white transition-colors">
                 Odalarımız

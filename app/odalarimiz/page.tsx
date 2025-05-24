@@ -105,7 +105,7 @@ export default function Odalarimiz() {
                       <p className="text-lg font-semibold text-blue-600 mt-6">
                         {room.price}
                       </p>
-                      <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                      <button className="bg-[#9F7E7E] text-white px-8 py-3 rounded-lg hover:bg-[#8E6D6D] transition-colors">
                         Rezervasyon Yap
                       </button>
                     </div>

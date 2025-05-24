@@ -130,7 +130,7 @@ export default function Home() {
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.
               </p>
-              <button className="mt-8 bg-[#9F7E7E] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
+              <button className="mt-8 bg-[#9F7E7E] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#8E6D6D] transition-colors">
                 REZERVASYON
               </button>
             </div>

@@ -1,13 +1,12 @@
 {
-  "name": "boii-website",
+  "name": "cigani-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && touch out/.nojekyll",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export && touch out/.nojekyll"
+    "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
@@ -15,7 +14,8 @@
     "framer-motion": "^12.12.2",
     "next": "15.1.8",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

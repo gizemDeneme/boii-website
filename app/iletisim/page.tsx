@@ -1,168 +1,168 @@
+'use client';
+
 import Image from 'next/image';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
-export default function Iletisim() {
+export default function Contact() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
-    <>
-      <Header />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="relative h-[40vh]">
-          <Image
-            src="/images/hero-image.jpg"
-            alt="Boii İletişim"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-5xl font-bold mb-4">İletişim</h1>
-              <p className="text-xl">Size Yardımcı Olmaktan Mutluluk Duyarız</p>
-            </div>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="relative h-[60vh]">
+        <Image
+          src="/contact-hero.jpg"
+          alt="Contact Boii"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold mb-4">{t.contactTitle}</h1>
+            <p className="text-xl">{t.contactSubtitle}</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact Section */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Contact Info */}
+      {/* Content Section */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t.contactText1}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-8">İletişim Bilgileri</h2>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Adres</h3>
-                    <p className="text-gray-600">
-                      Sığacık Mahallesi, 128. Sk. No: 22<br />
-                      Seferihisar / İzmir
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Telefon</h3>
-                    <p className="text-gray-600">
-                      <a href="tel:+905421147644" className="hover:text-blue-600">
-                        +90 542 114 76 44
-                      </a>
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">E-posta</h3>
-                    <p className="text-gray-600">
-                      <a href="mailto:info@boii.com.tr" className="hover:text-blue-600">
-                        info@boii.com.tr
-                      </a>
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Sosyal Medya</h3>
-                    <div className="flex space-x-4">
-                      <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-600"
-                      >
-                        Instagram
-                      </a>
-                      <a
-                        href="https://facebook.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-600"
-                      >
-                        Facebook
-                      </a>
-                    </div>
-                  </div>
+                <h3 className="text-2xl font-semibold mb-4">{t.contactText2}</h3>
+                <p className="text-gray-600">{t.address}</p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">{t.contactText3}</h3>
+                <p className="text-gray-600">{t.phone}</p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">{t.contactText4}</h3>
+                <p className="text-gray-600">{t.email}</p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">{t.contactText5}</h3>
+                <div className="flex space-x-4">
+                  <Link
+                    href="https://instagram.com/boiirestbreakfast"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#5D4444] hover:text-[#4A3636]"
+                  >
+                    Instagram
+                  </Link>
+                  <Link
+                    href="https://facebook.com/boiirestbreakfast"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#5D4444] hover:text-[#4A3636]"
+                  >
+                    Facebook
+                  </Link>
                 </div>
               </div>
+            </div>
 
-              {/* Contact Form */}
+            {/* Contact Form */}
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-semibold mb-6">{t.contactText6}</h3>
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-gray-700 mb-2">
+                    {t.contactText7}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5D4444]"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-gray-700 mb-2">
+                    {t.contactText8}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5D4444]"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-gray-700 mb-2">
+                    {t.contactText9}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5D4444]"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-[#5D4444] text-white py-3 rounded-lg hover:bg-[#4A3636] transition-colors"
+                >
+                  {t.contactText10}
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {/* Visit Us Section */}
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.contactText11}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-3xl font-bold mb-8">Bize Ulaşın</h2>
-                <form className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 mb-2">
-                      Adınız Soyadınız
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">
-                      E-posta Adresiniz
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-gray-700 mb-2">
-                      Konu
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 mb-2">
-                      Mesajınız
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={6}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      required
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#9F7E7E] text-white px-8 py-3 rounded-lg hover:bg-[#8E6D6D] transition-colors"
-                  >
-                    Gönder
-                  </button>
-                </form>
+                <h3 className="text-2xl font-semibold mb-4">{t.contactText12}</h3>
+                <p className="text-gray-600 mb-4">{t.contactText13}</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                    {t.contactText14}
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                    {t.contactText15}
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                    {t.contactText16}
+                  </li>
+                </ul>
+              </div>
+              <div className="relative h-96">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12578.575367932894!2d26.778889!3d38.195556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb7f6c8e4c8b0f%3A0x7c2c4c4b4b4b4b4b!2sS%C4%B1%C4%9Fac%C4%B1k%2C+Seferihisar%2F%C4%B0zmir!5e0!3m2!1str!2str!4v1621234567890!5m2!1str!2str"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-lg"
+                ></iframe>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold mb-8 text-center">Konum</h2>
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3131.8876168859087!2d26.78837!3d38.19194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb95a5e8f85c21%3A0x9876543210fedcba!2zQm9paSBSZXN0ICYgQnJlYWtmYXN0IC0gU8SxxJ9hY8SxayBLYWxlacOnaSBCdXRpayBPdGVs!5e0!3m2!1str!2str!4v1710371234567!5m2!1str!2str"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-lg shadow-lg"
-              ></iframe>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+        </div>
+      </section>
+    </div>
   );
 } 

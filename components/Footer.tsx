@@ -1,90 +1,84 @@
+'use client';
+
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
-    <footer className="bg-gray-900 text-white">
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-[#5D4444] text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Contact Info */}
+          {/* Boii Rest & Breakfast */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">BOİİ REST & BREAKFAST</h3>
-            <div className="space-y-3 text-gray-300">
-              <p>Sığacık Mahallesi,</p>
-              <p>128. Sk. No: 22</p>
-              <p>Seferihisar / İzmir</p>
-            </div>
+            <h3 className="text-lg font-semibold mb-4">Boii Rest & Breakfast</h3>
+            <p className="text-sm">{t.address}</p>
           </div>
 
-          {/* Quick Links */}
+          {/* Social Media */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Hızlı Bağlantılar</h3>
-            <div className="space-y-3">
-              <Link href="/" className="block text-gray-300 hover:text-white transition-colors">
-                Ana Sayfa
-              </Link>
-              <Link href="/hikayemiz" className="block text-gray-300 hover:text-white transition-colors">
-                Hikayemiz
-              </Link>
-              <Link href="/odalarimiz" className="block text-gray-300 hover:text-white transition-colors">
-                Odalarımız
-              </Link>
-              <Link href="/kahvaltimiz" className="block text-gray-300 hover:text-white transition-colors">
-                Kahvaltımız
-              </Link>
+            <h3 className="text-lg font-semibold mb-4">{t.socialMedia}</h3>
+            <div className="flex space-x-4">
+              <a 
+                href="https://instagram.com/boii.sigacik" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-gray-300 flex items-center"
+              >
+                <FaInstagram className="mr-2" size={20} />
+                Instagram
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-gray-300 flex items-center"
+              >
+                <FaFacebook className="mr-2" size={20} />
+                Facebook
+              </a>
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">İletişim</h3>
-            <div className="space-y-3 text-gray-300">
-              <p>Tel: +90 542 114 76 44</p>
-              <p>E-posta: info@boii.com.tr</p>
-            </div>
+            <h3 className="text-lg font-semibold mb-4">{t.contact}</h3>
+            <p className="text-sm mb-2">{t.phone}</p>
+            <p className="text-sm">{t.email}</p>
           </div>
 
-          {/* Social Media */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-6">Sosyal Medya</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Facebook
-              </a>
-            </div>
+            <h3 className="text-lg font-semibold mb-4">{t.quickLinks}</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/" className="hover:text-gray-300">{t.home}</Link>
+              </li>
+              <li>
+                <Link href="/hikayemiz" className="hover:text-gray-300">{t.about}</Link>
+              </li>
+              <li>
+                <Link href="/sigacik" className="hover:text-gray-300">{t.sigacik}</Link>
+              </li>
+              <li>
+                <Link href="/odalarimiz" className="hover:text-gray-300">{t.rooms}</Link>
+              </li>
+              <li>
+                <Link href="/kahvaltimiz" className="hover:text-gray-300">{t.breakfast}</Link>
+              </li>
+              <li>
+                <Link href="/iletisim" className="hover:text-gray-300">{t.contact}</Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Boii Rest & Breakfast. Tüm hakları saklıdır.
-            </p>
-            <div className="flex space-x-6 text-sm">
-              <Link href="/kvkk" className="text-gray-400 hover:text-white transition-colors">
-                KVKK
-              </Link>
-              <Link href="/gizlilik" className="text-gray-400 hover:text-white transition-colors">
-                Gizlilik Politikası
-              </Link>
-            </div>
-          </div>
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
+          <p>&copy; {new Date().getFullYear()} Boii Rest & Breakfast. {t.rights}</p>
         </div>
       </div>
     </footer>

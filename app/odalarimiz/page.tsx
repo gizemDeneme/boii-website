@@ -1,147 +1,180 @@
-import Image from 'next/image';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+'use client';
 
-export default function Odalarimiz() {
-  const rooms = [
-    {
-      title: 'Standart Oda',
-      image: '/images/oda1.jpg',
-      description: 'Modern ve konforlu bir şekilde tasarlanmış standart odalarımız, rahat bir konaklama için gereken tüm olanaklara sahiptir.',
-      features: [
-        '25m² Alan',
-        'Çift Kişilik Yatak',
-        'Klima',
-        'Mini Bar',
-        'Ücretsiz Wi-Fi',
-        'LED TV',
-        'Özel Banyo'
-      ],
-      price: 'Gecelik 1.200 TL\'den başlayan fiyatlarla'
-    },
-    {
-      title: 'Deluxe Oda',
-      image: '/images/oda2.jpeg',
-      description: 'Geniş ve ferah deluxe odalarımız, konforunuz için özel olarak tasarlanmış olup, şık detaylarla donatılmıştır.',
-      features: [
-        '35m² Alan',
-        'King Size Yatak',
-        'Klima',
-        'Mini Bar',
-        'Ücretsiz Wi-Fi',
-        'LED TV',
-        'Lüks Banyo',
-        'Oturma Alanı'
-      ],
-      price: 'Gecelik 1.500 TL\'den başlayan fiyatlarla'
-    },
-    {
-      title: 'Suite Oda',
-      image: '/images/oda3.jpeg',
-      description: 'En üst düzey konfor ve lüksü bir arada sunan suite odalarımız, unutulmaz bir konaklama deneyimi yaşamanızı sağlar.',
-      features: [
-        '45m² Alan',
-        'King Size Yatak',
-        'Klima',
-        'Mini Bar',
-        'Ücretsiz Wi-Fi',
-        'LED TV',
-        'Jakuzili Banyo',
-        'Geniş Oturma Alanı',
-        'Deniz Manzarası'
-      ],
-      price: 'Gecelik 2.000 TL\'den başlayan fiyatlarla'
-    }
-  ];
+import Image from 'next/image';
+import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
+
+export default function Rooms() {
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
-    <>
-      <Header />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="relative h-[60vh]">
-          <Image
-            src="/images/oda1.jpg"
-            alt="Boii Odalar"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-5xl font-bold mb-4">Odalarımız</h1>
-              <p className="text-xl">Konfor ve Huzurun Buluştuğu Noktalar</p>
-            </div>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="relative h-[60vh]">
+        <Image
+          src="/rooms-hero.jpg"
+          alt="Rooms at Boii"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold mb-4">{t.roomsTitle}</h1>
+            <p className="text-xl">{t.roomsSubtitle}</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Rooms Section */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="space-y-20">
-              {rooms.map((room, index) => (
-                <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                  <div className={`relative h-[400px] ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                    <Image
-                      src={room.image}
-                      alt={room.title}
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
-                  <div>
-                    <h2 className="text-3xl font-bold mb-4">{room.title}</h2>
-                    <p className="text-gray-600 mb-6">{room.description}</p>
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold">Özellikler:</h3>
-                      <ul className="grid grid-cols-2 gap-3">
-                        {room.features.map((feature, i) => (
-                          <li key={i} className="flex items-center text-gray-600">
-                            <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="text-lg font-semibold text-blue-600 mt-6">
-                        {room.price}
-                      </p>
-                      <button className="bg-[#9F7E7E] text-white px-8 py-3 rounded-lg hover:bg-[#8E6D6D] transition-colors">
-                        Rezervasyon Yap
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* Content Section */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t.roomsText1}
+            </p>
           </div>
-        </section>
 
-        {/* Additional Info */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold mb-6">Tüm Odalarımızda</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Konfor</h3>
-                <p className="text-gray-600">Yüksek Kaliteli Yataklar</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div>
+              <h3 className="text-2xl font-semibold mb-4">{t.roomsText2}</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                  {t.roomsList1}
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                  {t.roomsList2}
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                  {t.roomsList3}
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                  {t.roomsList4}
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                  {t.roomsList5}
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-[#5D4444] rounded-full mr-3"></span>
+                  {t.roomsList6}
+                </li>
+              </ul>
+            </div>
+            <div className="relative h-96">
+              <Image
+                src="/room-features.jpg"
+                alt="Room Features"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          </div>
+
+          {/* Room Types */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Standard Room */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/standard-room.jpg"
+                  alt="Standard Room"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Teknoloji</h3>
-                <p className="text-gray-600">Hızlı Wi-Fi</p>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">{t.standardRoomTitle}</h3>
+                <p className="text-gray-600 mb-4">{t.standardRoomText}</p>
+                <p className="text-[#5D4444] font-semibold mb-4">{t.standardRoomPrice}</p>
+                <Link
+                  href="https://www.booking.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-[#5D4444] text-white px-6 py-2 rounded-full hover:bg-[#4A3636] transition-colors"
+                >
+                  {t.reservation}
+                </Link>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Temizlik</h3>
-                <p className="text-gray-600">Günlük Oda Servisi</p>
+            </div>
+
+            {/* Deluxe Room */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/deluxe-room.jpg"
+                  alt="Deluxe Room"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Güvenlik</h3>
-                <p className="text-gray-600">24 Saat Kamera</p>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">{t.deluxeRoomTitle}</h3>
+                <p className="text-gray-600 mb-4">{t.deluxeRoomText}</p>
+                <p className="text-[#5D4444] font-semibold mb-4">{t.deluxeRoomPrice}</p>
+                <Link
+                  href="https://www.booking.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-[#5D4444] text-white px-6 py-2 rounded-full hover:bg-[#4A3636] transition-colors"
+                >
+                  {t.reservation}
+                </Link>
+              </div>
+            </div>
+
+            {/* Suite Room */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/suite-room.jpg"
+                  alt="Suite Room"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-2">{t.suiteRoomTitle}</h3>
+                <p className="text-gray-600 mb-4">{t.suiteRoomText}</p>
+                <p className="text-[#5D4444] font-semibold mb-4">{t.suiteRoomPrice}</p>
+                <Link
+                  href="https://www.booking.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-[#5D4444] text-white px-6 py-2 rounded-full hover:bg-[#4A3636] transition-colors"
+                >
+                  {t.reservation}
+                </Link>
               </div>
             </div>
           </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+
+          {/* Contact Information */}
+          <div className="bg-gray-50 p-8 rounded-lg mt-16">
+            <h3 className="text-2xl font-semibold mb-4">{t.roomsText3}</h3>
+            <p className="text-lg mb-2">{t.roomsText4}</p>
+            <p className="text-lg mb-4">{t.roomsText5}</p>
+            <div className="text-center">
+              <p className="text-lg mb-2">{t.roomsText6}</p>
+              <p className="text-lg mb-4">{t.roomsText7}</p>
+              <Link
+                href="https://www.booking.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#5D4444] text-white px-8 py-3 rounded-full hover:bg-[#4A3636] transition-colors"
+              >
+                {t.reservation}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 } 

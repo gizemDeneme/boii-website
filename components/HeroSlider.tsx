@@ -45,7 +45,7 @@ export default function HeroSlider({ images }: HeroSliderProps) {
           <p className="text-xl">
             Sığacık Kaleiçi'nde, sade ve özenli bir konaklama deneyimi.
           </p>
-          <button className="mt-8 bg-[#9F7E7E] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
+          <button className="mt-8 bg-[#8B6B6B] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
             REZERVASYON
           </button>
         </div>

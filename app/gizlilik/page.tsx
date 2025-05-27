@@ -6,7 +6,7 @@ export default function Gizlilik() {
         
         <div className="prose prose-lg">
           <p>
-            Boii Rest & Breakfast olarak, sizlere sunduğumuz hizmetler kapsamında kişisel 
+            Boii Rest &amp; Breakfast olarak, sizlere sunduğumuz hizmetler kapsamında kişisel 
             bilgilerinizin gizliliğini korumaya önem veriyoruz. Bu Gizlilik Politikası, 
             web sitemizi ziyaret ettiğinizde ve hizmetlerimizi kullandığınızda bilgilerinizin 
             nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.

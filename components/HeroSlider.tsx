@@ -41,9 +41,9 @@ export default function HeroSlider({ images }: HeroSliderProps) {
       ))}
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
         <div className="text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Boii Rest & Breakfast</h1>
+          <h1 className="text-5xl font-bold mb-4">Boii Rest &amp; Breakfast</h1>
           <p className="text-xl">
-            Sığacık Kaleiçi'nde, sade ve özenli bir konaklama deneyimi.
+            Sığacık Kaleiçi&apos;nde, sade ve özenli bir konaklama deneyimi.
           </p>
           <button className="mt-8 bg-[#8B6B6B] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all">
             REZERVASYON

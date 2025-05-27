@@ -6,8 +6,8 @@ export default function KVKK() {
         
         <div className="prose prose-lg">
           <p>
-            Boii Rest & Breakfast olarak kişisel verilerinizin güvenliği konusunda azami hassasiyet göstermekteyiz. 
-            Bu bilinçle, Boii Rest & Breakfast olarak, Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında Veri 
+            Boii Rest &amp; Breakfast olarak kişisel verilerinizin güvenliği konusunda azami hassasiyet göstermekteyiz. 
+            Bu bilinçle, Boii Rest &amp; Breakfast olarak, Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında Veri 
             Sorumlusu sıfatıyla, kişisel verilerinizi aşağıda açıklanan amaçlar doğrultusunda ve mevzuatın 
             çizdiği sınırlar çerçevesinde işlemekteyiz.
           </p>
@@ -37,7 +37,7 @@ export default function KVKK() {
             Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi
           </h2>
           <p>
-            Kişisel verileriniz, Boii Rest & Breakfast tarafından farklı kanallar aracılığıyla ve 
+            Kişisel verileriniz, Boii Rest &amp; Breakfast tarafından farklı kanallar aracılığıyla ve 
             farklı hukuki sebeplere dayanarak; sunduğumuz hizmetleri sağlamak, geliştirmek ve 
             ticari faaliyetlerimizi yürütmek amacıyla toplanmaktadır. Bu süreçte toplanan kişisel 
             verileriniz; elektronik ortamda web sitemiz, e-posta, çağrı merkezi ve fiziki ortamda 
